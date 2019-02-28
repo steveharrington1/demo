@@ -1,0 +1,492 @@
+{
+"counts": {
+"status": [
+  {
+"count": 11,
+"name": "OK"
+},
+  {
+"count": 3,
+"name": "Alert"
+},
+  {
+"count": 1,
+"name": "No Data"
+}
+],
+"muted": [
+  {
+"count": 15,
+"name": false
+}
+],
+"tag": [
+  {
+"count": 15,
+"name": "build"
+},
+  {
+"count": 15,
+"name": "canary"
+},
+  {
+"count": 1,
+"name": "client:forrester"
+},
+  {
+"count": 1,
+"name": "service:forrester-demo-celery"
+},
+  {
+"count": 1,
+"name": "service:fse-auto-process"
+}
+],
+"type": [
+  {
+"count": 5,
+"name": "anomaly"
+},
+  {
+"count": 5,
+"name": "event"
+},
+  {
+"count": 4,
+"name": "composite"
+},
+  {
+"count": 1,
+"name": "metric"
+}
+],
+},
+"monitors": [
+  {
+"status": "OK",
+"scopes": [
+  "build:build10",
+  "type:deploy"
+],
+"classification": "event",
+"creator": {
+"handle": "mike.laning@datadoghq.com",
+"id": 912350,
+"name": "Mike Laning"
+},
+"metrics": [],
+"notifications": [],
+"last_triggered_ts": 1550247711,
+"id": 6825591,
+"name": "Canary Build Event: {{build.name}} [ML]",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "event alert"
+},
+  {
+"status": "OK",
+"scopes": [],
+"classification": "composite",
+"creator": {
+"handle": "mike.laning@datadoghq.com",
+"id": 912350,
+"name": "Mike Laning"
+},
+"metrics": [],
+"notifications": [
+  {
+"handle": "slack-demos",
+"name": "Slack demos"
+},
+  {
+"handle": "webhook-fse-auto-process-rollback",
+"name": "Webhook: fse-auto-process-rollback"
+}
+],
+"last_triggered_ts": 1550247729,
+"id": 6825609,
+"name": "Canary Composite - [ML] - {{build}}",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "composite"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "build:canary33"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "benjamin.burns@datadoghq.com",
+"id": 589103,
+"name": "Benjamin Burns"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [],
+"last_triggered_ts": 1551388031,
+"id": 6905291,
+"name": "Canary Anomaly Detection - [bb] - canary33",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [],
+"classification": "composite",
+"creator": {
+"handle": "brendan.roche@datadoghq.com",
+"id": 557879,
+"name": "Brendan Roche"
+},
+"metrics": [],
+"notifications": [
+  {
+"handle": "webhook-fse-auto-process-rollback",
+"name": "Webhook: fse-auto-process-rollback"
+}
+],
+"last_triggered_ts": 1551297312,
+"id": 6358332,
+"name": "Canary Composite - [BMR] - {{build}}",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "composite"
+},
+  {
+"status": "OK",
+"scopes": [
+  "type:deploy",
+  "build:canary33"
+],
+"classification": "event",
+"creator": {
+"handle": "benjamin.burns@datadoghq.com",
+"id": 589103,
+"name": "Benjamin Burns"
+},
+"metrics": [],
+"notifications": [],
+"last_triggered_ts": 1545148646,
+"id": 6298646,
+"name": "Canary Build Event: {{build.name}} [bb] - canary33",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "event alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "*"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "boyan.syarov@datadoghq.com",
+"id": 596268,
+"name": "Boyan Syarov"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [
+  {
+"handle": "slack-boyan-demos",
+"name": "Slack boyan-demos"
+}
+],
+"last_triggered_ts": 1551297329,
+"id": 6536129,
+"name": "Canary Anomaly Detection - [boyan] - canary12",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [],
+"classification": "composite",
+"creator": {
+"handle": "henry.doan@datadoghq.com",
+"id": 810648,
+"name": "Henry Doan"
+},
+"metrics": [],
+"notifications": [
+  {
+"handle": "webhook-fse-auto-process-rollback",
+"name": "Webhook: fse-auto-process-rollback"
+},
+  {
+"handle": "slack-henry-demo",
+"name": "Slack henry-demo"
+}
+],
+"last_triggered_ts": null,
+"id": 7247780,
+"name": "Canary Composite - [hvd] - {{build}}",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "composite"
+},
+  {
+"status": "No Data",
+"scopes": [
+  "build:canary-b1"
+],
+"classification": "metric",
+"creator": {
+"handle": "benjamin.burns@datadoghq.com",
+"id": 589103,
+"name": "Benjamin Burns"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [],
+"last_triggered_ts": null,
+"id": 6299814,
+"name": "Canary Performance Monitor - {{build.name}} [bb]",
+"tags": [
+  "build",
+  "canary",
+  "service:fse-auto-process"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "type:deploy",
+  "build:canary99"
+],
+"classification": "event",
+"creator": {
+"handle": "brendan.roche@datadoghq.com",
+"id": 557879,
+"name": "Brendan Roche"
+},
+"metrics": [],
+"notifications": [],
+"last_triggered_ts": 1551297233,
+"id": 6354893,
+"name": "Canary Build Event: {{build.name}} [bmr]",
+"tags": [
+  "service:forrester-demo-celery",
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "event alert"
+},
+  {
+"status": "OK",
+"scopes": [],
+"classification": "composite",
+"creator": {
+"handle": "boyan.syarov@datadoghq.com",
+"id": 596268,
+"name": "Boyan Syarov"
+},
+"metrics": [],
+"notifications": [
+  {
+"handle": "slack-boyan-demos",
+"name": "Slack boyan-demos"
+},
+  {
+"handle": "webhook-fse-auto-process-rollback",
+"name": "Webhook: fse-auto-process-rollback"
+}
+],
+"last_triggered_ts": null,
+"id": 6538971,
+"name": "Canary Composite - [boyan] - {{build}}",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "composite"
+},
+  {
+"status": "OK",
+"scopes": [
+  "build:canary114",
+  "build:prod"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "henry.doan@datadoghq.com",
+"id": 810648,
+"name": "Henry Doan"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [
+  {
+"handle": "slack-henry-demo",
+"name": "Slack henry-demo"
+}
+],
+"last_triggered_ts": 1550193470,
+"id": 7247750,
+"name": "Canary Anomaly Detection - [hvd] - canary114",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "build:canary114",
+  "type:deploy"
+],
+"classification": "event",
+"creator": {
+"handle": "henry.doan@datadoghq.com",
+"name": "Henry Doan",
+"id": {
+"handle": "henry.doan@datadoghq.com",
+"id": 810648,
+"name": null
+}
+},
+"metrics": [],
+"notifications": [],
+"last_triggered_ts": null,
+"id": 7247759,
+"name": "Canary Build Event: {{build.name}} [hvd]",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "event alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "build:prod",
+  "build:canary99"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "brendan.roche@datadoghq.com",
+"id": 557879,
+"name": "Brendan Roche"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [
+  {
+"handle": "jira-wave-story",
+"name": "jira-wave-story"
+},
+  {
+"handle": "slack-brendan-demo",
+"name": "Slack brendan-demo"
+}
+],
+"last_triggered_ts": 1551387165,
+"id": 6347805,
+"name": "Canary Anomaly Detection - [bmr] - canary99",
+"tags": [
+  "build",
+  "canary",
+  "client:forrester"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "type:deploy",
+  "build:canary12"
+],
+"classification": "event",
+"creator": {
+"handle": "boyan.syarov@datadoghq.com",
+"id": 596268,
+"name": "Boyan Syarov"
+},
+"metrics": [],
+"notifications": [],
+"last_triggered_ts": null,
+"id": 6539324,
+"name": "Canary Build Event: {{build.name}} [boyan]",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "event alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "build:build10",
+  "build:prod"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "mike.laning@datadoghq.com",
+"id": 912350,
+"name": "Mike Laning"
+},
+"metrics": [
+  "fse_auto_process.request.duration"
+],
+"notifications": [
+  {
+"handle": "slack-demos",
+"name": "Slack demos"
+}
+],
+"last_triggered_ts": 1551386977,
+"id": 6825577,
+"name": "Canary Anomaly Detection - [ML] - build10",
+"tags": [
+  "build",
+  "canary"
+],
+"org_id": 11287,
+"type": "query alert"
+}
+],
+"metadata": {
+"total_count": 15,
+"page_count": 15,
+"page": 0,
+"per_page": 30
+}
+}
