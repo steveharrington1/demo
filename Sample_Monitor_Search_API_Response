@@ -6,137 +6,241 @@
 "name": "OK"
 },
   {
-"count": 3,
+"count": 9,
 "name": "Alert"
 },
   {
-"count": 1,
+"count": 4,
 "name": "No Data"
+},
+  {
+"count": 1,
+"name": "Warn"
 }
 ],
 "muted": [
   {
-"count": 15,
+"count": 19,
 "name": false
+},
+  {
+"count": 6,
+"name": true
 }
 ],
 "tag": [
   {
-"count": 15,
-"name": "build"
+"count": 25,
+"name": "service:coffee-house"
 },
   {
-"count": 15,
-"name": "canary"
+"count": 9,
+"name": "env:datad0g.com"
 },
   {
-"count": 1,
-"name": "client:forrester"
-},
-  {
-"count": 1,
-"name": "service:forrester-demo-celery"
+"count": 2,
+"name": "resource_name:get_/coffeehouse"
 },
   {
 "count": 1,
-"name": "service:fse-auto-process"
+"name": "check_status:live"
+},
+  {
+"count": 1,
+"name": "check_type:api"
+},
+  {
+"count": 1,
+"name": "env:staging"
+},
+  {
+"count": 1,
+"name": "probe_dc:aws:ap-northeast-1"
+},
+  {
+"count": 1,
+"name": "probe_dc:aws:eu-central-1"
+},
+  {
+"count": 1,
+"name": "probleme:latence"
 }
 ],
 "type": [
   {
-"count": 5,
+"count": 12,
+"name": "apm"
+},
+  {
+"count": 7,
 "name": "anomaly"
 },
   {
-"count": 5,
-"name": "event"
+"count": 2,
+"name": "integration"
 },
   {
-"count": 4,
-"name": "composite"
+"count": 2,
+"name": "metric"
 },
   {
 "count": 1,
-"name": "metric"
+"name": "event"
+},
+  {
+"count": 1,
+"name": "synthetics"
 }
 ],
 },
 "monitors": [
   {
-"status": "OK",
+"status": "No Data",
 "scopes": [
-  "build:build10",
-  "type:deploy"
+  "*"
 ],
-"classification": "event",
+"classification": "integration",
 "creator": {
-"handle": "mike.laning@datadoghq.com",
-"id": 912350,
-"name": "Mike Laning"
+"handle": "andrew.doberstein@datadoghq.com",
+"id": 586194,
+"name": "Andrew Doberstein"
 },
-"metrics": [],
-"notifications": [],
-"last_triggered_ts": 1550247711,
-"id": 6825591,
-"name": "Canary Build Event: {{build.name}} [ML]",
+"metrics": [
+  "aws.ecs.services"
+],
+"notifications": [
+  {
+"handle": "james.leung@datadoghq.com",
+"name": "James Leung"
+}
+],
+"last_triggered_ts": 1545369330,
+"id": 4788210,
+"name": "[CH-Demo] Tomcat Servlet Request Duration is Spiking on Coffee-House",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
-"type": "event alert"
+"type": "query alert"
 },
   {
-"status": "OK",
-"scopes": [],
-"classification": "composite",
+"status": "No Data",
+"scopes": [
+  "host:coffeehouseprod"
+],
+"classification": "anomaly",
 "creator": {
-"handle": "mike.laning@datadoghq.com",
-"id": 912350,
-"name": "Mike Laning"
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "tomcat.servlet.processing_time"
+],
+"notifications": [],
+"last_triggered_ts": 1548446860,
+"id": 4809460,
+"name": "Java Coffee-House: [ALERT] Web Server Processing Time Anomaly",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "Alert",
+"scopes": [],
+"classification": "synthetics",
+"creator": {
+"handle": "james.leung@datadoghq.com",
+"id": 862836,
+"name": "James Leung"
 },
 "metrics": [],
 "notifications": [
   {
-"handle": "slack-demos",
-"name": "Slack demos"
-},
-  {
-"handle": "webhook-fse-auto-process-rollback",
-"name": "Webhook: fse-auto-process-rollback"
+"handle": "james.leung@datadoghq.com",
+"name": "James Leung"
 }
 ],
-"last_triggered_ts": 1550247729,
-"id": 6825609,
-"name": "Canary Composite - [ML] - {{build}}",
+"last_triggered_ts": 1546609512,
+"id": 7265112,
+"name": "[Synthetics] Coffeehouse Homepage Response Time",
 "tags": [
-  "build",
-  "canary"
+  "probe_dc:aws:eu-central-1",
+  "check_type:api",
+  "probe_dc:aws:ap-northeast-1",
+  "check_status:live",
+  "service:coffee-house"
 ],
 "org_id": 11287,
-"type": "composite"
+"type": "synthetics alert"
 },
   {
-"status": "Alert",
+"status": "OK",
 "scopes": [
-  "build:canary33"
+  "env:datad0g.com",
+  "resource_name:get_/coffeehouse",
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "warren.mui@datadoghq.com",
+"id": 869130,
+"name": "Warren Mui"
+},
+"metrics": [
+  "trace.servlet.request.hits"
+],
+"notifications": [
+  {
+"handle": "warren.mui@datadoghq.com",
+"name": "Warren Mui"
+},
+  {
+"handle": "sarah.schaab@datadoghq.com",
+"name": "Sarah Schaab"
+}
+],
+"last_triggered_ts": 1551148999,
+"id": 8127259,
+"name": "Service coffee-house on resource_name:get_/coffeehouse has an abnormal change in throughput on env:datad0g.com - Warren APM Demo",
+"tags": [
+  "env:datad0g.com",
+  "resource_name:get_/coffeehouse",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "host:coffeehouseprod"
 ],
 "classification": "anomaly",
 "creator": {
-"handle": "benjamin.burns@datadoghq.com",
-"id": 589103,
-"name": "Benjamin Burns"
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
 },
 "metrics": [
-  "fse_auto_process.request.duration"
+  "tomcat.servlet.processing_time"
 ],
 "notifications": [],
-"last_triggered_ts": 1551388031,
-"id": 6905291,
-"name": "Canary Anomaly Detection - [bb] - canary33",
+"last_triggered_ts": null,
+"id": 4809732,
+"name": "Coffee House Servlet [ALERT] - Increase in servlet processing time",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
 "type": "query alert"
@@ -144,348 +248,596 @@
   {
 "status": "OK",
 "scopes": [],
-"classification": "composite",
+"classification": "event",
 "creator": {
-"handle": "brendan.roche@datadoghq.com",
-"id": 557879,
-"name": "Brendan Roche"
+"handle": "james.leung@datadoghq.com",
+"id": 862836,
+"name": "James Leung"
 },
 "metrics": [],
 "notifications": [
   {
-"handle": "webhook-fse-auto-process-rollback",
-"name": "Webhook: fse-auto-process-rollback"
+"handle": "james.leung@datadoghq.com",
+"name": "James Leung"
 }
 ],
-"last_triggered_ts": 1551297312,
-"id": 6358332,
-"name": "Canary Composite - [BMR] - {{build}}",
+"last_triggered_ts": null,
+"id": 8326017,
+"name": "[CH-Demo] Ansible Deployment on coffee-house",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
-"type": "composite"
+"type": "event alert"
+},
+  {
+"status": "No Data",
+"scopes": [
+  "service:coffee-house"
+],
+"classification": "metric",
+"creator": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "trace.BaseController.getPayment.duration"
+],
+"notifications": [],
+"last_triggered_ts": null,
+"id": 4583852,
+"name": "Investigation Required: BaseController.getPayment() duration",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "andrew.southard@datadoghq.com",
+"id": 638345,
+"name": "Andrew Southard"
+},
+"metrics": [
+  "trace.servlet.request.duration.by.service.90p"
+],
+"notifications": [
+  {
+"handle": "andrew.southard@datadoghq.com",
+"name": "Andrew Southard"
+}
+],
+"last_triggered_ts": 1551451854,
+"id": 8467554,
+"name": "Service coffee-house has a high p90 latency on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "service:coffee-house",
+  "env:staging"
+],
+"classification": "apm",
+"creator": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "trace.servlet.request.duration",
+  "trace.servlet.request.hits"
+],
+"notifications": [
+  {
+"handle": "demo@datadoghq.com",
+"name": "Datadog Demo"
+}
+],
+"last_triggered_ts": 1541624427,
+"id": 4278147,
+"name": "Service coffee-house has a high average latency on env:staging",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "service:coffee-house",
+  "env:staging"
+],
+"classification": "apm",
+"creator": {
+"handle": "andrew.doberstein@datadoghq.com",
+"id": 586194,
+"name": "Andrew Doberstein"
+},
+"metrics": [
+  "trace.servlet.request.duration.by.service.90p"
+],
+"notifications": [],
+"last_triggered_ts": 1548343198,
+"id": 4694998,
+"name": "[DEMO] Service coffee-house has a high p90 latency on env:staging",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "service:coffee-house",
+  "env:staging"
+],
+"classification": "apm",
+"creator": {
+"handle": "andrew.doberstein@datadoghq.com",
+"id": 586194,
+"name": "Andrew Doberstein"
+},
+"metrics": [
+  "trace.servlet.request.duration.by.service.90p"
+],
+"notifications": [],
+"last_triggered_ts": 1541624422,
+"id": 4149202,
+"name": "Service coffee-house has a high p90 latency on env:staging",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
 },
   {
 "status": "OK",
 "scopes": [
-  "type:deploy",
-  "build:canary33"
+  "service:coffee-house",
+  "env:staging"
 ],
-"classification": "event",
+"classification": "anomaly",
 "creator": {
-"handle": "benjamin.burns@datadoghq.com",
-"id": 589103,
-"name": "Benjamin Burns"
+"handle": "victor.gonzalez@datadoghq.com",
+"name": "Victor Gonzalez",
+"id": {
+"handle": "victor.gonzalez@datadoghq.com",
+"id": 498639,
+"name": null
+}
 },
-"metrics": [],
+"metrics": [
+  "trace.servlet.request.hits"
+],
 "notifications": [],
-"last_triggered_ts": 1545148646,
-"id": 6298646,
-"name": "Canary Build Event: {{build.name}} [bb] - canary33",
+"last_triggered_ts": 1549303532,
+"id": 4663892,
+"name": "Service coffee-house has an abnormal change in throughput on env:staging",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
-"type": "event alert"
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "service:coffee-house",
+  "env:staging"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "trace.GET.duration"
+],
+"notifications": [
+  {
+"handle": "demo@datadoghq.com",
+"name": "Datadog Demo"
+}
+],
+"last_triggered_ts": 1523547424,
+"id": 4278124,
+"name": "Service coffee-house has an abnormal change in throughput on env:staging",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "jonathan.deguzman@datadoghq.com",
+"id": 912348,
+"name": "Jonathan Deguzman"
+},
+"metrics": [
+  "trace.servlet.request.hits",
+  "trace.servlet.request.errors"
+],
+"notifications": [],
+"last_triggered_ts": null,
+"id": 7685823,
+"name": "jonathan-test-error",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "host:coffeehouseprod"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "trace.CoffeeHouse.tracedValidateUser.duration"
+],
+"notifications": [],
+"last_triggered_ts": 1523547645,
+"id": 4408605,
+"name": "Anomaly detection with duration of CoffeeHouse.traceValidateUser on {{host.name}}",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "daniel.reed@datadoghq.com",
+"id": 654531,
+"name": "Daniel Reed"
+},
+"metrics": [
+  "trace.servlet.request.duration.by.service.90p"
+],
+"notifications": [
+  {
+"handle": "daniel.reed@datadoghq.com",
+"name": "Daniel Reed"
+}
+],
+"last_triggered_ts": 1549584007,
+"id": 7826707,
+"name": "Application Service coffee-house has a high p90 latency on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "probleme:latence",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "daniel.reed@datadoghq.com",
+"id": 654531,
+"name": "Daniel Reed"
+},
+"metrics": [
+  "trace.servlet.request.hits"
+],
+"notifications": [],
+"last_triggered_ts": 1551456679,
+"id": 6670519,
+"name": "Service coffee-house has an abnormal change in throughput on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "Alert",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "metric",
+"creator": {
+"handle": "daniel.reed@datadoghq.com",
+"id": 654531,
+"name": "Daniel Reed"
+},
+"metrics": [
+  "trace.servlet.request.apdex.by.service"
+],
+"notifications": [
+  {
+"handle": "daniel.reed@datadoghq.com",
+"name": "Daniel Reed"
+}
+],
+"last_triggered_ts": 1549559828,
+"id": 7620428,
+"name": "Service coffee-house has an abnormal change in Apdex on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "metric alert"
+},
+  {
+"status": "Warn",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "david.bouchare@datadoghq.com",
+"id": 580239,
+"name": "David Bouchare"
+},
+"metrics": [
+  "trace.servlet.request.hits",
+  "trace.servlet.request.errors"
+],
+"notifications": [
+  {
+"handle": "david.bouchare@datadoghq.com",
+"name": "David Bouchare"
+}
+],
+"last_triggered_ts": 1551312994,
+"id": 6723634,
+"name": "Service coffee-house has a high error rate on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"classification": "anomaly",
+"creator": {
+"handle": "andrew.southard@datadoghq.com",
+"id": 638345,
+"name": "Andrew Southard"
+},
+"metrics": [
+  "trace.servlet.request.hits"
+],
+"notifications": [
+  {
+"handle": "andrew.southard@datadoghq.com",
+"name": "Andrew Southard"
+}
+],
+"last_triggered_ts": null,
+"id": 8467555,
+"name": "Service coffee-house has an abnormal change in throughput on env:datad0g.com",
+"tags": [
+  "env:datad0g.com",
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "resource_name:get_/coffeehouse",
+  "service:coffee-house",
+  "env:staging"
+],
+"classification": "apm",
+"creator": {
+"handle": "thibaud.simonnin@datadoghq.com",
+"id": 752814,
+"name": "Thibaud Simonnin"
+},
+"metrics": [
+  "trace.servlet.request.duration",
+  "trace.servlet.request.hits"
+],
+"notifications": [],
+"last_triggered_ts": 1545084718,
+"id": 6079018,
+"name": "TitiSim Service coffee-house on resource_name:get_/coffeehouse has a high average latency on env:staging",
+"tags": [
+  "resource_name:get_/coffeehouse",
+  "service:coffee-house",
+  "env:staging"
+],
+"org_id": 11287,
+"type": "query alert"
+},
+  {
+"status": "OK",
+"scopes": [
+  "service:coffee-house"
+],
+"classification": "apm",
+"creator": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
+},
+"metrics": [
+  "trace.BaseController.getPayment.errors"
+],
+"notifications": [],
+"last_triggered_ts": 1523901932,
+"id": 4583732,
+"name": "Service Coffee House - BaseController.getPayment error",
+"tags": [
+  "service:coffee-house"
+],
+"org_id": 11287,
+"type": "query alert"
 },
   {
 "status": "OK",
 "scopes": [
   "*"
 ],
-"classification": "anomaly",
+"classification": "apm",
 "creator": {
-"handle": "boyan.syarov@datadoghq.com",
-"id": 596268,
-"name": "Boyan Syarov"
+"handle": "michael.aravopoulos@datadoghq.com",
+"name": "michael.aravopoulos@datadoghq.com",
+"id": {
+"handle": "michael.aravopoulos@datadoghq.com",
+"id": 674985,
+"name": null
+}
 },
 "metrics": [
-  "fse_auto_process.request.duration"
+  "trace.CoffeeHouse.tracedValidateUser.errors"
 ],
-"notifications": [
-  {
-"handle": "slack-boyan-demos",
-"name": "Slack boyan-demos"
-}
-],
-"last_triggered_ts": 1551297329,
-"id": 6536129,
-"name": "Canary Anomaly Detection - [boyan] - canary12",
+"notifications": [],
+"last_triggered_ts": 1544021772,
+"id": 4471752,
+"name": "CoffeeHouse.tracedValidateUser span - error",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
 "type": "query alert"
-},
-  {
-"status": "OK",
-"scopes": [],
-"classification": "composite",
-"creator": {
-"handle": "henry.doan@datadoghq.com",
-"id": 810648,
-"name": "Henry Doan"
-},
-"metrics": [],
-"notifications": [
-  {
-"handle": "webhook-fse-auto-process-rollback",
-"name": "Webhook: fse-auto-process-rollback"
-},
-  {
-"handle": "slack-henry-demo",
-"name": "Slack henry-demo"
-}
-],
-"last_triggered_ts": null,
-"id": 7247780,
-"name": "Canary Composite - [hvd] - {{build}}",
-"tags": [
-  "build",
-  "canary"
-],
-"org_id": 11287,
-"type": "composite"
 },
   {
 "status": "No Data",
 "scopes": [
-  "build:canary-b1"
+  "service:coffee-house"
 ],
-"classification": "metric",
+"classification": "integration",
 "creator": {
-"handle": "benjamin.burns@datadoghq.com",
-"id": 589103,
-"name": "Benjamin Burns"
+"handle": "andrew.doberstein@datadoghq.com",
+"id": 586194,
+"name": "Andrew Doberstein"
 },
 "metrics": [
-  "fse_auto_process.request.duration"
-],
-"notifications": [],
-"last_triggered_ts": null,
-"id": 6299814,
-"name": "Canary Performance Monitor - {{build.name}} [bb]",
-"tags": [
-  "build",
-  "canary",
-  "service:fse-auto-process"
-],
-"org_id": 11287,
-"type": "query alert"
-},
-  {
-"status": "OK",
-"scopes": [
-  "type:deploy",
-  "build:canary99"
-],
-"classification": "event",
-"creator": {
-"handle": "brendan.roche@datadoghq.com",
-"id": 557879,
-"name": "Brendan Roche"
-},
-"metrics": [],
-"notifications": [],
-"last_triggered_ts": 1551297233,
-"id": 6354893,
-"name": "Canary Build Event: {{build.name}} [bmr]",
-"tags": [
-  "service:forrester-demo-celery",
-  "build",
-  "canary"
-],
-"org_id": 11287,
-"type": "event alert"
-},
-  {
-"status": "OK",
-"scopes": [],
-"classification": "composite",
-"creator": {
-"handle": "boyan.syarov@datadoghq.com",
-"id": 596268,
-"name": "Boyan Syarov"
-},
-"metrics": [],
-"notifications": [
-  {
-"handle": "slack-boyan-demos",
-"name": "Slack boyan-demos"
-},
-  {
-"handle": "webhook-fse-auto-process-rollback",
-"name": "Webhook: fse-auto-process-rollback"
-}
-],
-"last_triggered_ts": null,
-"id": 6538971,
-"name": "Canary Composite - [boyan] - {{build}}",
-"tags": [
-  "build",
-  "canary"
-],
-"org_id": 11287,
-"type": "composite"
-},
-  {
-"status": "OK",
-"scopes": [
-  "build:canary114",
-  "build:prod"
-],
-"classification": "anomaly",
-"creator": {
-"handle": "henry.doan@datadoghq.com",
-"id": 810648,
-"name": "Henry Doan"
-},
-"metrics": [
-  "fse_auto_process.request.duration"
+  "tomcat.processing_time"
 ],
 "notifications": [
   {
-"handle": "slack-henry-demo",
-"name": "Slack henry-demo"
+"handle": "andrew.doberstein@datadoghq.com",
+"name": "Andrew Doberstein"
+},
+  {
+"handle": "pagerduty-demo",
+"name": "pagerduty-demo"
 }
 ],
-"last_triggered_ts": 1550193470,
-"id": 7247750,
-"name": "Canary Anomaly Detection - [hvd] - canary114",
+"last_triggered_ts": 1549618163,
+"id": 7501343,
+"name": "[CH-Demo-Screenboard] Tomcat Servlet Request Duration is Spiking on Coffee-House",
 "tags": [
-  "build",
-  "canary"
+  "service:coffee-house"
 ],
 "org_id": 11287,
 "type": "query alert"
-},
-  {
-"status": "OK",
-"scopes": [
-  "build:canary114",
-  "type:deploy"
-],
-"classification": "event",
-"creator": {
-"handle": "henry.doan@datadoghq.com",
-"name": "Henry Doan",
-"id": {
-"handle": "henry.doan@datadoghq.com",
-"id": 810648,
-"name": null
-}
-},
-"metrics": [],
-"notifications": [],
-"last_triggered_ts": null,
-"id": 7247759,
-"name": "Canary Build Event: {{build.name}} [hvd]",
-"tags": [
-  "build",
-  "canary"
-],
-"org_id": 11287,
-"type": "event alert"
 },
   {
 "status": "Alert",
 "scopes": [
-  "build:prod",
-  "build:canary99"
+  "env:datad0g.com",
+  "service:coffee-house"
 ],
-"classification": "anomaly",
+"classification": "apm",
 "creator": {
-"handle": "brendan.roche@datadoghq.com",
-"id": 557879,
-"name": "Brendan Roche"
+"handle": "oceane.fievet@datadoghq.com",
+"id": 205520,
+"name": "Océane Fievet"
 },
 "metrics": [
-  "fse_auto_process.request.duration"
+  "trace.servlet.request.duration",
+  "trace.servlet.request.hits"
 ],
 "notifications": [
   {
-"handle": "jira-wave-story",
-"name": "jira-wave-story"
-},
-  {
-"handle": "slack-brendan-demo",
-"name": "Slack brendan-demo"
+"handle": "oceane.fievet@datadoghq.com",
+"name": "Océane Fievet"
 }
 ],
-"last_triggered_ts": 1551387165,
-"id": 6347805,
-"name": "Canary Anomaly Detection - [bmr] - canary99",
+"last_triggered_ts": 1551457260,
+"id": 7934880,
+"name": "Service coffee-house has a high average latency on env:datad0g.com",
 "tags": [
-  "build",
-  "canary",
-  "client:forrester"
-],
-"org_id": 11287,
-"type": "query alert"
-},
-  {
-"status": "OK",
-"scopes": [
-  "type:deploy",
-  "build:canary12"
-],
-"classification": "event",
-"creator": {
-"handle": "boyan.syarov@datadoghq.com",
-"id": 596268,
-"name": "Boyan Syarov"
-},
-"metrics": [],
-"notifications": [],
-"last_triggered_ts": null,
-"id": 6539324,
-"name": "Canary Build Event: {{build.name}} [boyan]",
-"tags": [
-  "build",
-  "canary"
-],
-"org_id": 11287,
-"type": "event alert"
-},
-  {
-"status": "Alert",
-"scopes": [
-  "build:build10",
-  "build:prod"
-],
-"classification": "anomaly",
-"creator": {
-"handle": "mike.laning@datadoghq.com",
-"id": 912350,
-"name": "Mike Laning"
-},
-"metrics": [
-  "fse_auto_process.request.duration"
-],
-"notifications": [
-  {
-"handle": "slack-demos",
-"name": "Slack demos"
-}
-],
-"last_triggered_ts": 1551386977,
-"id": 6825577,
-"name": "Canary Anomaly Detection - [ML] - build10",
-"tags": [
-  "build",
-  "canary"
+  "env:datad0g.com",
+  "service:coffee-house"
 ],
 "org_id": 11287,
 "type": "query alert"
 }
 ],
 "metadata": {
-"total_count": 15,
-"page_count": 15,
+"total_count": 25,
+"page_count": 25,
 "page": 0,
 "per_page": 30
 }
