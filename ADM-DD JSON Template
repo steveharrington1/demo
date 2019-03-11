@@ -1,0 +1,56 @@
+{
+    "$schema":
+    "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+      {
+        "apiVersion": "2018-09-01-preview",
+        "type": "Microsoft.DeploymentManager/steps",
+        "name": "healthCheckStep",
+        "location": "Central US",
+        "tags": {
+          "displayName": "healthCheckCanary"
+        },
+        "properties": {
+          "stepType": "healthCheck",
+          "attributes": { 
+            "waitDuration": "PT5M", 
+            "maxElasticDuration": "PT10M",
+            "healthyStateDuration": "PT10M",   
+            "type": "REST", 
+            "properties": {
+                "healthChecks": [
+                  {
+                    "name":"datadogHealthCheck", 
+                    "request": {
+                       "method": "GET",
+                       "uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=<INSERT_APP_KEY>&query=tag:"<INSERT_TAG>",
+                       "authentication": {
+                         "type": "ApiKey", 
+                         "name": "api_key", 
+                         "in": "Query", 
+                         "value": "<INSERT_API_KEY>"
+                        }
+                    },
+                    "response": { 
+                      "successStatusCodes": ["200"], 
+                      "regex": {
+                        "matches": [ 
+                          "(\"name\": \"OK\")",
+                          "^(\"name\": \"Alert\")",
+                          "^(\"name\": \"Warn\")",
+                          "^(\"name\": \"No Data\")"
+                        ],
+                        "matchQuantifier": "All"
+                      }
+                    }
+                  }
+                ]
+             }
+          }
+        }
+      }
+    ]
+  }
