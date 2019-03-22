@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "amdr2"
+      "value": "admr2"
     },
     "azureResourceLocation": {
       "value": "centralus"
