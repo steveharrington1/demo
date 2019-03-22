@@ -1,0 +1,21 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "namePrefix": {
+      "value": "steveADM"
+    },
+    "azureResourceLocation": {
+      "value": "centralus"
+    },
+    "binaryArtifactRoot": {
+      "value": "binaries/1.0.0.0"
+    },
+    "managedIdentityID": {
+      "value": "/subscriptions/8c56d827-5f07-45ce-8f2b-6c5001db5c6f/resourcegroups/eclairStandardLBGroup/providers/Microsoft.ManagedIdentity/userassignedidentities/steveADMuser"
+    },
+    "artifactSourceSASLocation": {
+      "value": "https://steveadmtutorial.blob.core.windows.net/blobcontainer?st=2019-03-20T20%3A28%3A49Z&se=2019-03-31T08%3A28%3A00Z&sp=rwdl&sv=2018-03-28&sr=c&sig=CFCfC15oF7alSlg1YP5yFiybPITymny0vVs2TQUtxyA%3D"
+    }
+  }
+}
