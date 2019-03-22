@@ -3,19 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "steveADM"
+      "value": "admr2"
     },
     "azureResourceLocation": {
       "value": "centralus"
     },
     "binaryArtifactRoot": {
-      "value": "binaries/1.0.0.2"
+      "value": "binaries/1.0.0.0"
     },
     "managedIdentityID": {
-      "value": "/subscriptions/8c56d827-5f07-45ce-8f2b-6c5001db5c6f/resourcegroups/eclairStandardLBGroup/providers/Microsoft.ManagedIdentity/userassignedidentities/steveADMuser"
+      "value": "/subscriptions/8c56d827-5f07-45ce-8f2b-6c5001db5c6f/resourcegroups/eclairStandardLBGroup/providers/Microsoft.ManagedIdentity/userassignedidentities/steveADMr2"
     },
     "artifactSourceSASLocation": {
-      "value": "https://steveadmtutorial.blob.core.windows.net/blobcontainer?st=2019-03-20T20%3A28%3A49Z&se=2019-03-31T08%3A28%3A00Z&sp=rwdl&sv=2018-03-28&sr=c&sig=CFCfC15oF7alSlg1YP5yFiybPITymny0vVs2TQUtxyA%3D"
+      "value": "https://steveadmtutorial.blob.core.windows.net/blobcontainer?st=2019-03-22T20%3A16%3A56Z&se=2019-10-23T19%3A16%3A00Z&sp=rwdl&sv=2018-03-28&sr=c&sig=423YW1c%2FMIJr6PuUc5XMYF3IX7Xk8xqBlF19M6flIiM%3D"
     }
   }
 }
