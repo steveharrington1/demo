@@ -9,7 +9,7 @@
       "value": "centralus"
     },
     "binaryArtifactRoot": {
-      "value": "binaries/1.0.0.0"
+      "value": "binaries/1.0.0.1"
     },
     "managedIdentityID": {
       "value": "/subscriptions/8c56d827-5f07-45ce-8f2b-6c5001db5c6f/resourcegroups/eclairStandardLBGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/steveadmuser3"
