@@ -11,7 +11,7 @@
         "name": "healthCheckStep",
         "location": "Central US",
         "tags": {
-          "displayName": "healthCheckCanary"
+          "displayName": "healthCheckDatadog"
         },
         "properties": {
           "stepType": "healthCheck",
