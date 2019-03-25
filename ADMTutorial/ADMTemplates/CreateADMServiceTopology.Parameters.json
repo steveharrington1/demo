@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "namePrefix": {
-      "value": "admr2"
+      "value": "admr3"
     },
     "azureResourceLocation": {
       "value": "centralus"
     },
     "artifactSourceSASLocation": {
-      "value": "https://steveadmtutorial.blob.core.windows.net/blobcontainer?st=2019-03-22T20%3A16%3A56Z&se=2019-10-23T19%3A16%3A00Z&sp=rwdl&sv=2018-03-28&sr=c&sig=423YW1c%2FMIJr6PuUc5XMYF3IX7Xk8xqBlF19M6flIiM%3D" 
+      "value": "https://steveadmtutorial.blob.core.windows.net/admtutorial?st=2019-03-25T18%3A49%3A28Z&se=2019-09-26T17%3A49%3A00Z&sp=rwdl&sv=2018-03-28&sr=c&sig=xJDsAGJ%2B8WyR0F90ZUttQx2yH3r%2BVohZh72v2FfvidU%3D" 
     },
     "templateArtifactRoot": {
       "value": "templates/1.0.0.0"
