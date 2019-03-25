@@ -1,0 +1,56 @@
+ {
+    "$schema":
+    "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "variables": {},
+    "resources": [
+      {
+        "apiVersion": "2018-09-01-preview",
+        "type": "Microsoft.DeploymentManager/steps",
+        "name": "healthCheckStep",
+        "location": "Central US",
+        "tags": {
+          "displayName": "healthCheckCanary"
+        },
+        "properties": {
+          "stepType": "healthCheck",
+          "attributes": { 
+            "waitDuration": "PT1M", 
+            "maxElasticDuration": "PT10M",
+            "healthyStateDuration": "PT1M",   
+            "type": "REST", 
+            "properties": {
+                "healthChecks": [
+                  {
+                    "name":"datadogHealthCheck", 
+                    "request": {
+                       "method": "GET",
+                       "uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=a3b8663eebf9658beacb59884dd34e2f0b5bbf43&query=tag:"check1",
+                       "authentication": {
+                         "type": "ApiKey", 
+                         "name": "api_key", 
+                         "in": "Query", 
+                         "value": "058acddaeff18f22d10ae87524eabe95"
+                        }
+                    },
+                    "response": { 
+                      "successStatusCodes": ["200"], 
+                     "regex": {
+                        "matches": [
+                            "^(.*\"name\"\\s*:\\s*\"OK\").*$",
+                            "^(?!.*\"name\"\\s*:\\s*\"Alert\").*$",
+                            "^(?!.*\"name\"\\s*:\\s*\"Warn\").*$",
+                            "^(?!.*\"name\"\\s*:\\s*\"No Data\").*$"
+                          ],
+                          "matchQuantifier": "All"
+                       }
+                    }
+                  }
+                ]
+             }
+          }
+        }
+      }
+    ]
+  }
