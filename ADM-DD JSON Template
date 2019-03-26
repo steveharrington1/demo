@@ -11,7 +11,7 @@
         "name": "healthCheckStep",
         "location": "Central US",
         "tags": {
-          "displayName": "healthCheckCanary"
+          "displayName": "datadogHealthCheck"
         },
         "properties": {
           "stepType": "healthCheck",
@@ -23,7 +23,7 @@
             "properties": {
                 "healthChecks": [
                   {
-                    "name":"datadogHealthCheck", 
+                    "name":"datadogHealthCheck1", 
                     "request": {
                        "method": "GET",
                        "uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=<INSERT_APP_KEY>&query=tag:'<INSERT_TAG>'",
