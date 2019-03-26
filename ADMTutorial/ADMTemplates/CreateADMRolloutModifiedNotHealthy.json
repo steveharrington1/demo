@@ -102,7 +102,7 @@
                     							"name":"datadogHealthCheck", 
                     							"request": {
                       							"method": "GET",
-                       							"uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=a3b8663eebf9658beacb59884dd34e2f0b5bbf43&query=tag:'check6'",
+                       							"uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=a3b8663eebf9658beacb59884dd34e2f0b5bbf43&query=tag:'check2'",
                        							"authentication": {
                          						"type": "ApiKey", 
                          						"name": "api_key", 
