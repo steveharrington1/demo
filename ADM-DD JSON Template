@@ -38,10 +38,10 @@
                       "successStatusCodes": ["200"], 
                       "regex": {
                         "matches": [ 
-                          "(\"name\": \"OK\")",
-                          "^(\"name\": \"Alert\")",
-                          "^(\"name\": \"Warn\")",
-                          "^(\"name\": \"No Data\")"
+                          "^(.*\"name\"\\s*:\\s*\"OK\").*$",
+                          "^(?!.*\"name\"\\s*:\\s*\"Alert\").*$",
+                          "^(?!.*\"name\"\\s*:\\s*\"Warn\").*$",
+                          "^(?!.*\"name\"\\s*:\\s*\"No Data\").*$"
                         ],
                         "matchQuantifier": "All"
                       }
