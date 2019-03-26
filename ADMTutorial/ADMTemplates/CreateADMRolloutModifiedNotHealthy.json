@@ -141,7 +141,7 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.DeploymentManager/artifactSources', variables('rolloutArtifactSource').name)]",
-				"[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStep')]"
+				"[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStepNotHealthy')]"
 			],
 			"properties": {
 				"buildVersion": "1.0.0.0",
@@ -161,7 +161,7 @@
 						"deploymentTargetId": "[resourceId('Microsoft.DeploymentManager/serviceTopologies/services/serviceUnits', variables('serviceTopology').name, variables('serviceTopology').serviceWUS.name,  variables('serviceTopology').serviceWUS.serviceUnit1.name)]",
 						"postDeploymentSteps": [
 							{
-								"stepId": "[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStep')]"
+								"stepId": "[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStepNotHealthy')]"
 							}
 						]
 					},
