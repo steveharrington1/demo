@@ -152,18 +152,19 @@
 						"name": "stepGroup1",
 						"preDeploymentSteps": [],
 						"deploymentTargetId": "[resourceId('Microsoft.DeploymentManager/serviceTopologies/services/serviceUnits', variables('serviceTopology').name, variables('serviceTopology').serviceWUS.name,  variables('serviceTopology').serviceWUS.serviceUnit2.name)]",
-						"postDeploymentSteps": []
+						"postDeploymentSteps": [
+						{
+								"stepId": "[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStepNotHealthy')]"
+							}
+						
+						]
 					},
 					{
 						"name": "stepGroup2",
 						"dependsOnStepGroups": ["stepGroup1"],
 						"preDeploymentSteps": [],
 						"deploymentTargetId": "[resourceId('Microsoft.DeploymentManager/serviceTopologies/services/serviceUnits', variables('serviceTopology').name, variables('serviceTopology').serviceWUS.name,  variables('serviceTopology').serviceWUS.serviceUnit1.name)]",
-						"postDeploymentSteps": [
-							{
-								"stepId": "[resourceId('Microsoft.DeploymentManager/steps/', 'healthCheckStepNotHealthy')]"
-							}
-						]
+						"postDeploymentSteps": []
 					},
 					{
 						"name": "stepGroup3",
