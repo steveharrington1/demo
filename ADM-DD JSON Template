@@ -26,7 +26,7 @@
                     "name":"datadogHealthCheck1", 
                     "request": {
                        "method": "GET",
-                       "uri":"https://api.datadoghq.com/api/v1/monitor/search?application_key=<INSERT_APP_KEY>&query=tag:'<INSERT_TAG>'",
+                       "uri":"https://api.datadoghq.com/api/v1/monitor/<INSERT_MONITOR_ID>?application_key=<INSERT_APP_KEY>",
                        "authentication": {
                          "type": "ApiKey", 
                          "name": "api_key", 
