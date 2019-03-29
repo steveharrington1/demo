@@ -8,10 +8,10 @@
       {
         "apiVersion": "2018-09-01-preview",
         "type": "Microsoft.DeploymentManager/steps",
-        "name": "datadogHealthCheckStep",
+        "name": "healthCheckStep",
         "location": "Central US",
         "tags": {
-          "displayName": "datadogHealthCheck"
+          "displayName": "HealthCheckCanary"
         },
         "properties": {
           "stepType": "healthCheck",
@@ -23,7 +23,7 @@
             "properties": {
                 "healthChecks": [
                   {
-                    "name":"datadogHealthCheck1", 
+                    "name":"datadogHealthCheck", 
                     "request": {
                        "method": "GET",
                        "uri":"https://api.datadoghq.com/api/v1/monitor/<INSERT_MONITOR_ID>?application_key=<INSERT_APP_KEY>",
