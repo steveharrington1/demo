@@ -137,7 +137,7 @@
 				"type": "userAssigned",
 				"identityIds": [
 					"[parameters('managedIdentityID')]"
-				]
+					]
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.DeploymentManager/artifactSources', variables('rolloutArtifactSource').name)]",
