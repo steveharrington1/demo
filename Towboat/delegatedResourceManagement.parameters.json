@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mspName": {
+            "value": "Datadog Test MSP"
+        },
+        "mspOfferDescription": {
+            "value": "Datadog Test MSP- Steve's Test Account"
+        },
+        "managedByTenantId": {
+            "value": "4d3bac44-0230-4732-9e70-cc00736f0a97"
+        },
+        "authorizations": {
+            "value": [
+                {
+                    "principalId": "30ed0997-748d-4904-8f63-32b2e6d8a56b",
+                    "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
+                }
+            ]
+        }
+    }
+}
