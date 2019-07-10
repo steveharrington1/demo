@@ -1,0 +1,55 @@
+{
+    "manifestVersion": 1,
+    "id": “Datadog_integration”,
+    "version": "1.0.0",
+    "name": “Datadog<>Azure Devops Integration“,
+    "publisher": “Datadog”,
+    "description": "Awesome tools to help you and your team do great things everyday.",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services.Integration"
+        }
+    ],    
+    "icons": {
+        "default": "images/service-logo.jpg”
+    },
+    "categories": [
+        “Azure Pipelines“
+    ],
+    "tags": [
+        "working",
+        "people person",
+        "search"
+    ],
+    "screenshots": [
+        {
+            "path": "images/screen1.png"
+        },
+        {
+            "path": "images/screen2.png"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        },
+        "license": {
+            "path": “license.md"
+        }
+    },
+    "links": {
+        "getstarted": {
+            "uri": "https://www.datadoghq.com”
+        },
+        "learn": {
+            "uri": "https://www.docs.datadoghq.com”
+        },
+        "support": {
+            "uri": "https://www.datadoghq.com/support”
+        }
+    },
+    "branding": {
+        "color": "rgb(34, 34, 34)",
+        "theme": "dark"
+    }
+}
